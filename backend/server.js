@@ -10,6 +10,10 @@ const app = express()
 
 // middleware
 app.use(express.json())
+app.use(cors( {
+  origin: [''],
+  methods: ["POST","GET"],
+  credentials: true}));
 
 app.use((req, res, next) => {
   console.log(req.path, req.method)
